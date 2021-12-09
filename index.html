@@ -1,4 +1,4 @@
-<html>
+<html> 
     <head>
         <script src='jquery-3.6.0.js'></script>
         <title>jQuery!</title>
@@ -6,7 +6,25 @@
 
     <body>
         <div id='about' style='height: 150px; width: 300px; background-color: lightgreen; text-align: center; padding: 10px;'>
-            
+            <div type='button' id='show'>show</div>
+            <div type='button' id='show'>show</div>
+            <div type='button' id='show'>show</div>
+
+
+            <script> //TO SEE IN WEB BROWSER, JUST 'HTTP-SERVER' (lowcase) and go to localhost:8080
+                // just like js
+                $(document).ready(() => { //make sure document is loaded
+                    $('#about').click(function() { //arrow function and this? issues
+                        $(this).html('you clicked me!'); //this refers to the current html ele
+                    });
+                    $('#about').hover(function() {
+                        $(this).css('background-color', 'lightblue');
+                    });
+                    $('#about').mouseleave(function() {
+                        $(this).css('background-color', 'lightgreen');
+                    });
+                })
+            </script>
         </div>
     </body>
 </html>
